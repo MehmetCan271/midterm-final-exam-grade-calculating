@@ -1,0 +1,203 @@
+/******************************************************************************
+
+                        MCB Vize Final Hesaplama ProgramD1
+
+*******************************************************************************/
+   
+  
+ 
+using System;
+
+ 
+class HelloWorld 
+{
+  
+ 
+static void Main () 
+  {
+    
+ 
+double sayi, binler, yuzler, onlar, birler, vize, final, gort;
+  
+ 
+kontrol:
+Console. 
+      WriteLine 
+      ("Asagidaki Girecek Oldugunuz sayinin binler ve birler \nbasamagi vizeyi yuzler ve onlar basamagi finali temsil etmektedir!!!");
+    
+ 
+Console.Write ("4 Basamakli Sayi Giriniz:");
+    
+ 
+sayi = Convert.ToInt16 (Console.ReadLine ());
+    
+ 
+if (sayi >= 1000 && sayi <= 9999)
+      
+      {
+	
+ 
+binler = (sayi - (sayi % 1000)) / 1000;
+	
+ 
+ 
+ 
+int b = Convert.ToInt16 (((sayi % 100) - (sayi % 10)) / 10);
+	
+ 
+onlar = b;
+	
+ 
+ 
+birler = Convert.ToInt16 (sayi % 10);
+	
+ 
+yuzler = ((sayi - (onlar * 10 + birler)) - (binler * 1000)) / 100;
+	
+ 
+vize = (binler * 10) + birler;
+	
+ 
+final = (yuzler * 10) + onlar;
+	
+ 
+Console.WriteLine ("Vize Notu:{0}", vize);
+	
+ 
+Console.WriteLine ("Final Notu:{0}", final);
+	
+ 
+ 
+Console. 
+	  Write 
+	  ("Yukarida Yazan Notlar Dogru mu? \nDogru ise (1) YanlD1E ise (2) yaziniz:");
+	
+ 
+int durum = Convert.ToInt16 (Console.ReadLine ());
+	
+ 
+ 
+switch (durum)
+	  
+ 
+	  {
+	  
+ 
+case 1:
+	    
+goto ort;
+	    
+break;
+	  
+ 
+case 2:
+	    
+goto kontrol;
+	    
+break;
+	  
+ 
+ 
+default:
+	    
+Console. 
+	      Write 
+	      ("LC<tfen Gecerli islem yapiniz...\n**********************\n");
+	    
+break;
+	  
+ 
+ 
+}
+      
+ 
+ort:
+gort = (vize * 0.4) + (final * 0.6);
+	
+ 
+if (gort >= 60 && gort <= 100)
+	  
+	  {
+	    
+ 
+Console. 
+	      WriteLine 
+	      ("{0} puan ile sD1nD1fD1 gectiniz tebrikler!!!\n**********************\n",
+	       
+gort);
+	    
+ 
+goto kontrol;
+	  
+ 
+ 
+}
+	
+ 
+	else if (gort >= 0 && gort < 60)
+	  
+	  {
+	    
+ 
+Console. 
+	      WriteLine 
+	      ("{0} puan ile sD1nD1fta kaldiniz gelecek sene tekrar deneyiniz!!!\n********************\n",
+	       
+gort);
+	    
+ 
+goto kontrol;
+	  
+ 
+}
+	
+ 
+	else
+	  
+	  {
+	    
+ 
+Console. 
+	      WriteLine 
+	      ("Lutfen Gecerli bir not tipi giriniz\n************************\n");
+	    
+ 
+goto kontrol;
+	  
+ 
+}
+      
+ 
+}
+    
+ 
+    else
+      
+      {
+	
+ 
+Console. 
+	  WriteLine 
+	  ("LC<tfen 4 Basamakli Sayi Girerek tekrar deneyiniz\n********************\n");
+	
+ 
+goto kontrol;
+      
+ 
+}
+    
+ 
+Console.ReadKey ();
+  
+ 
+ 
+}
+
+ 
+ 
+ 
+}
+
+
+ 
+ 
